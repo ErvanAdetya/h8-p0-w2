@@ -1,0 +1,22 @@
+TUGAS 1
+SIMPAN angka1;
+SIMPAN angka2;
+SIMPAN hasil HITUNG angka1 dengan angka2;
+TULISKAN hasil;
+
+
+TUGAS 2
+SIMPAN kata1 berisi "Saya Belajar JavaScript!";
+IF kata1 sama dengan "Saya Belajar JavaScript!";
+TULISKAN "Pasti Bisa!";
+
+
+TUGAS 3
+angka2 = 0;
+SIMPAN angka1;
+proses1 (
+	angka2=angka2+1;
+	IF angka2 modulus 3 = 0;
+	TAMPILKAN angka2;
+	ULANGI proses1 hingga angka2 = angka1;
+)

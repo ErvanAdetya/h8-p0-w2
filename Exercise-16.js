@@ -1,31 +1,13 @@
 var board = [['1','2','3'],['4','5','6'],['7','8','9']];
 var winner=null;
-var nick1='player1';
-var nick2='player2';
 var player1=true;
 var player2=false;
 var memo1=[['',''],['',''],['',''],['','']];
 var token='O';
 var turnCount=1;
-var boxIndex;
-var gameMode=0;
 //board[1][1]='X';
 //console.log(board);
 
-function wichBox(boxIndex) {
-  switch (boxIndex) {
-    case 1 : board[0][0]=token;
-    case 2 : board[0][1]=token;
-    case 3 : board[0][1]=token;
-    case 4 : board[1][0]=token;
-    case 5 : board[1][1]=token;
-    case 6 : board[1][2]=token;
-    case 7 : board[2][0]=token;
-    case 8 : board[2][1]=token;
-    case 9 : board[2][2]=token;
-    default : console.log('Nomor box salah');
-  }
-}
 
 function checkWinCondition() {
   for (var i=0; i<3; i++) {
@@ -74,15 +56,13 @@ function display() {
   console.log('-------------');
   console.log('| '+board[2][0]+' | '+board[2][1]+' | '+board[2][2]+' |');
   console.log('-------------');
-  console.log('');
-  console.log('');
 }
 
 function turn(){
   if(turnCount>0 && turnCount<10) {
     if(player1===true){
       display();
-      console.log(nick1+' turn '+turnCount);
+      console.log('player1 turn '+turnCount);
       AIeasy();
       changeTurn();
       checkWinCondition();
@@ -144,25 +124,6 @@ function AI() {
   }
 }
 
-function selectGame(gameMode) {
-  gameMode=prompt('Select Game Mode : \n1. Player 1 VS Com\n2.Player 1 VS Player 2\n3. Com VS Com');
-  switch (gameMode) {
-    case 1 : 
-      nick1=prompt('Enter your nickname');
-      break;
-    case 2 :
-      nick1=prompt('Enter Player1 nickname');
-      nick2=prompt('Enter Player2 nickname');
-      break;
-    case 3 :
-      while(turnCount!==0) {
-        turn();
-      }
-      break;
-  }
-}
-
 while(turnCount!==0) {
   turn();
 }
-selectGame(gameMode);

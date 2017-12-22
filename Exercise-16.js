@@ -1,3 +1,5 @@
+//link pseudocode :
+//https://github.com/ErvanAdetya/h8-p0-w2/blob/master/pseudocode.md
 var board = [['1','2','3'],['4','5','6'],['7','8','9']];
 var winner=null;
 var player1=true;
